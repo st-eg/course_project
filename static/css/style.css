@@ -1,0 +1,159 @@
+/* Сброс и базовые стили */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #212529;
+}
+
+/* Типографика */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Сетки */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-1 { flex: 0 0 8.33333%; }
+.col-2 { flex: 0 0 16.66667%; }
+.col-3 { flex: 0 0 25%; }
+.col-4 { flex: 0 0 33.33333%; }
+.col-5 { flex: 0 0 41.66667%; }
+.col-6 { flex: 0 0 50%; }
+.col-7 { flex: 0 0 58.33333%; }
+.col-8 { flex: 0 0 66.66667%; }
+.col-9 { flex: 0 0 75%; }
+.col-10 { flex: 0 0 83.33333%; }
+.col-11 { flex: 0 0 91.66667%; }
+.col-12 { flex: 0 0 100%; }
+
+/* Кнопки */
+button, .btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #4e555b;
+}
+
+/* Формы */
+input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input, select, textarea {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  margin: 0.375rem 0;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+button {
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+form {
+  display: block;
+  width: 100%;
+}
+
+/* Карточки */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+/* Заголовки для карточек */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.card-text {
+  margin-bottom: 1rem;
+}

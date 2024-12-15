@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Регистрация
+{% endblock %}
+
+{% block body %}
+
+<!--<main class="container form-signin w-100 m-auto  xs">-->
+<div class='container xs'>
+
+<!--</div>-->
+  <form method="POST" action="{{ url_for('sign_up') }}">
+    <h1 class="h3 mb-3 fw-normal custom-heading">Sign Up</h1>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" name="username" size=2 id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Username</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+<!--    <div class="form-check text-start my-3">-->
+<!--      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">-->
+<!--      <label class="form-check-label" for="flexCheckDefault">-->
+<!--        Remember me-->
+<!--      </label>-->
+<!--    </div>-->
+
+    <div>
+            <label>{{ form.isworker.label }}</label><br>
+            {{ form.isworker() }}<br>
+    </div>
+
+        <div id="worker_fields" style="display: none;">
+
+            <div class="form-floating">
+              <input type="text" class="form-control mb-3" name="first_name" size=2 id="first_name" placeholder="First Name">
+              <label for="first_name">First Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="second_name" size=2 id="second_name" placeholder="Second Name">
+                <label for="second_name">Second Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="surname" size=2 id="surname" placeholder="Surname">
+                <label for="surname">Surname</label>
+            </div>
+
+        </div>
+
+
+    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-body-secondary">© 2024–2024</p>
+  </form>
+
+      <script>
+        document.querySelector('input[name="isworker"]').addEventListener('change', function() {
+            const workerFields = document.getElementById('worker_fields');
+            if (this.checked) {
+                workerFields.style.display = 'block';
+            } else {
+                workerFields.style.display = 'none';
+            }
+        });
+    </script>
+
+  </div>
+{% endblock %}

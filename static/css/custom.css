@@ -1,0 +1,155 @@
+/* Изменение основного цвета */
+:root {
+  --bs-primary: #000000;  /* Задайте свой цвет */
+  --bs-secondary: #778899;
+  --bs-success: #28a745;
+  --bs-info: #17a2b8;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-dark: #222222;
+  --bs-light: #f8f9fa;
+  --bs-bg: #313131
+
+  --dim-grey: #696969
+  --dark-grey: #ffffff
+
+            
+}
+
+/* Применение нового цвета к кнопкам */
+.btn-primary {
+  background-color: #222222;
+  border-color: #222222
+}
+/* Можно задать другой цвет на ховер */
+
+.btn-primary:hover {
+  background-color: #474747;
+  border-color: #474747;
+}
+/* Стили для активной ссылки */
+.nav-item .nav-link.active {
+  color: #fff;  /* Цвет текста для активной ссылки */
+  background-color:   #778899;/* Цвет фона для активной ссылки */
+  border-color: #778899; /* Если у ссылки есть граница */
+}
+
+/* Стили для ссылки при наведении */
+.nav-item .nav-link:hover {
+  color: #fff;  /* Цвет текста при наведении */
+  background-color: ;  /* Цвет фона при наведении */
+  border-color: ; /* Цвет границы при наведении */
+}
+
+.nav-item .nav-link {
+  color:  #ffffff;  /* Цвет текста для обычных ссылок */
+}
+
+/* Изменение цвета текста на ссылках */
+a {
+  color: ;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Изменить цвет фона страницы */
+body {
+  background-color: #313131;  /* Светло-серый фон */
+}
+
+footer
+{
+  background-color: #313131;
+}
+header
+{
+  background-color: #222222;
+}
+label {
+    color: #ffffff;
+}
+
+/* Изменение цвета текста в поле ввода */
+.form-floating .form-control {
+    color: #000000; /* цвет текста */
+    background-color: #ffffff; /* фон */
+    border-color: #ffffff; /*  цвет рамки */
+
+}
+
+/* Изменение цвета рамки при фокусе */
+.form-floating .form-control:focus {
+    border-color: #313131; /* Зеленая рамка при фокусе */
+    box-shadow: 0 0 5px rgba(0, 200, 0, 0.5); /* Зеленый эффект при фокусе */
+}
+
+/* Изменение цвета текста метки */
+.form-floating label {
+    color: #000000; /* Оранжевый цвет для метки */
+}
+
+/* Изменение цвета метки при фокусе */
+.form-floating .form-control:focus ~ label {
+    color: #000000; /* Зеленый цвет метки при фокусе */
+}
+
+/* Изменение цвета рамки контейнера */
+.form-floating {
+    border: #fff; /* Синяя рамка для контейнера */
+    border-radius: .25rem; /* Скругление углов */
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/* Изменение цвета для заголовка с классом custom-heading */
+.custom-heading {
+  color: #ffffff;  /* Пример: оранжевый цвет */
+}
+
+.flashes {
+    color: #ffffff;  /* Устанавливаем красный цвет текста */
+  }
+
+.profile-card {
+    display: flex; /* Включаем flexbox */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    gap: 20px; /* Расстояние между фото и текстом */
+}
+
+.profile-img {
+    margin-top: 20px; /* Отступ сверху для изображения */
+}
+
+.profile-info {
+    max-width: 500px; /* Можно установить максимальную ширину для информации */
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px; /* Отступы между контактами */
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #007BFF; /* Цвет ссылок */
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+.card.mb-6 {
+    background-color: #f0f0f0; /* Замените на любой цвет, который вам нужен */
+}
+.col.p-4.d-flex.flex-column.position-static {
+    background-color: #e0e0e0; /* немного темнее фон для текста */
+}
+#about-link {
+    color: #696969;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Repair Work</title>
+</head>
+<body>
+    <h1>Create Repair Work</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div>
+            {{ form.car.label }} {{ form.car() }}
+        </div>
+        <div>
+            {{ form.worker.label }} {{ form.worker() }}
+        </div>
+        <div>
+            {{ form.garage.label }} {{ form.garage() }}
+        </div>
+        <div>
+            {{ form.detail.label }} {{ form.detail() }}
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

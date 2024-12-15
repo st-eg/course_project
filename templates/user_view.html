@@ -1,0 +1,64 @@
+{% extends 'user_base.html' %}
+
+{% block title %}
+Вход
+{% endblock %}
+
+{% block body %}
+
+<!--{% for i in lots %}-->
+<div class="container">
+    <div class="row">
+        {% for car in lots %}
+            <div class="col-md-6 mb-4">
+                <div class="card mb-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-6 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+<!--                            <strong class="d-inline-block mb-2 text-success-emphasis">{{ car.Make }}, {{ car.Model }}</strong>-->
+                            <h3 class="mb-0">{{ car.Make }} {{ car.Model }}</h3>
+                            <div class="mb-1 text-body-secondary">{{ car.Date }}</div>
+                            <p class="mb-auto">
+                                This is a wider card with supporting text below as a natural lead-in to additional content.
+                                <br><strong>Make:</strong> {{ car.Make }}
+                                <br><strong>Category:</strong> {{ car.Category }}
+                                <br><strong>License Plates:</strong> {{ car.Plates }}
+                                <br><strong>Production Date:</strong> {{ car.Production_Date }}
+                                <br><strong>VIN:</strong> {{ car.VIN }}
+                                <p>{{ car.Image_path }}</p>
+                            </p>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{ car.Image_path }}" alt="Thumbnail" class="bd-placeholder-img img-fluid" style="width: auto; height: auto; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+<!-- <div class="container my-6">-->
+<!--        <div class="row">-->
+<!--            {% for car in lots %}-->
+<!--                <div class="col-md-6">-->
+<!--                    <div class="card mb-6">-->
+<!--                        <img src="{{ car.image }}" class="card-img-top" alt="Car Image">-->
+<!--                        <div class="card-body">-->
+<!--                            <h5 class="card-title">{{ car.make }} {{ car.model }}</h5>-->
+<!--                            <p class="card-text">-->
+<!--                                <strong>Category:</strong> {{ car.category }}<br>-->
+<!--                                <strong>License Plates:</strong> {{ car.plates }}<br>-->
+<!--                                <strong>VIN:</strong> {{ car.vin }}<br>-->
+<!--                                <strong>Production Date:</strong> {{ car.date }}-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--    </div>-->
+<!--{% endfor %}-->
+
+{% endblock %}

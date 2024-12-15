@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Создание лота
+{% endblock %}
+
+{% block body %}
+<div class='container mt-5'>
+    <main>
+        <h1 class="h3 mb-3 fw-normal custom-heading">Create a lot</h1>
+
+<form method="POST"  enctype="multipart/form-data" action="{{ url_for('create_lot') }}">
+    <div class="col-12">
+              <label for="make" class="form-label">Make</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" name="make" id="make" placeholder="Make" required="">
+                <div class="invalid-feedback">
+                  Car's make is required.
+                </div>
+              </div>
+    </div>
+
+
+    <div class="col-12">
+              <label for="model" class="form-label">Model</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" name="model" id="model" placeholder="Model" required="">
+                <div class="invalid-feedback">
+                  Car's model is required.
+                </div>
+              </div>
+    </div>
+
+
+    <div class="col-12">
+              <label for="category" class="form-label">Category</label>
+              <div class="input-group has-validation">
+                <select name="category" id="category">
+                    <option value="Super">Super</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                </select>
+                 <div class="invalid-feedback">
+                  Car's category is required.
+                 </div>
+              </div>
+    </div>
+
+
+    <div class="col-12">
+              <label for="vin" class="form-label">VIN</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" name="vin" id="vin" placeholder="VIN" maxlength="17" required="">
+                <div class="invalid-feedback">
+                  Car's VIN is required.
+                </div>
+              </div>
+    </div>
+
+
+    <div class="col-12">
+              <label for="plates" class="form-label">Plates</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" name="plates" id="plates" placeholder="Plates" maxlength="6" required="">
+                <div class="invalid-feedback">
+                  Car's plates is required.
+                </div>
+              </div>
+    </div>
+
+
+    <div class="col-12">
+              <label for="production_date" class="form-label">Production Date</label>
+              <div class="input-group has-validation">
+                <input type="date" class="form-control" name="production_date" id="production_date" placeholder="Production date" value="" min="1950-01-01" max="2030-12-31" required="">
+                <div class="invalid-feedback">
+                  Car's production date is required.
+                </div>
+              </div>
+    </div>
+
+    <div class="col-12">
+              <label for="image" class="form-label">Car's Photo/label></label>
+              <div class="input-group has-validation">
+                <input type="file" class="form-control" name="image" id="image" accept="image/*" required="">
+                <div class="invalid-feedback">
+                  Photo if the car is required.
+                </div>
+              </div>
+    </div>
+
+
+    <div class="d-grid gap-2">
+
+        <button class="btn btn-primary" type="submit">Create lot</button>
+
+    </div>
+
+</form>
+    </main>
+
+
+    {% endblock %}

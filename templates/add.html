@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Выбор
+{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="{{ url_for('create_lot') }}">
+                <button class="btn btn-primary" type="button">Create Lot</button>
+            </a>
+
+            <a href="{{ url_for('create_repair_work') }}">
+                <button class="btn btn-primary" type="button">Create Repair Work Record</button>
+
+            </a>            <a href="{{ url_for('create_mileage') }}">
+                <button class="btn btn-primary" type="button">Create Mileage Record</button>
+            </a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Лобби
+{% endblock %}
+
+{% block body %}
+<!--<button class="btn btn-primary"  type="button">Log In</button>-->
+<style>
+    /* Контейнер слайдера */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-height: 800px;
+      max-width: 100%; /* Размер слайдера */
+      margin: auto;
+      overflow: hidden; /* Скрываем ненужные изображения */
+    }
+
+    /* Контейнер с изображениями */
+    .slider {
+      display: flex;
+      transition: transform 1s ease-in-out; /* Плавный переход */
+    }
+
+    /* Изображения слайдера */
+    .slider img {
+      width: 100%;
+      max-width: 100%;
+      max-height: auto;
+      object-fit: cover;
+      aspect-ratio: 16 / 9
+    }
+
+    /* Кнопки для листания */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    /* Круглый индикатор */
+    .dots {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .dot {
+      display: inline-block;
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+    <div class="slider-container">
+      <div class="slider">
+          <img src="static/images/slideshow/rari1.jpg" alt="Image 1">
+          <img src="static/images/slideshow/rollsroyce.jpg" alt="Image 2">
+          <img src="static/images/slideshow/benz.jpeg" alt="Image 3">
+          <img src="static/images/slideshow/rari5.jpg" alt="Image 4">
+      </div>
+
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+
+      <div class="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+      </div>
+    </div>
+
+
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="{{ url_for('log_in') }}">
+                <button class="btn btn-primary" type="button">Log In</button>
+            </a>
+
+            <a href="{{ url_for('sign_up') }}">
+                <button class="btn btn-primary" type="button">Sign Up</button>
+            </a>
+        </div>
+
+
+</body>
+<script>
+      // Переменные
+      const slides = document.querySelectorAll('.slider img');
+      const dots = document.querySelectorAll('.dot');
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      // Функция для отображения текущего изображения
+      function showSlide(index) {
+        // Циклическая навигация
+        if (index >= totalSlides) {
+          currentIndex = 0;  // Переход к первому слайду
+        } else if (index < 0) {
+          currentIndex = totalSlides - 1;  // Переход к последнему слайду
+        } else {
+          currentIndex = index;
+        }
+
+        // Сдвигаем слайды
+        const slider = document.querySelector('.slider');
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Обновляем индикаторы
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+      }
+
+      // Функции для переключения слайдов вручную
+      function nextSlide() {
+        showSlide(currentIndex + 1); // Переходим к следующему слайду
+      }
+
+      function prevSlide() {
+        showSlide(currentIndex - 1); // Переходим к предыдущему слайду
+      }
+
+      // Автоматическое переключение слайдов
+      function autoSlide() {
+        setInterval(nextSlide, 6000); // Смена слайдов каждые 6 секунды
+      }
+
+      // Инициализация
+      showSlide(currentIndex);
+      autoSlide();
+
+      // Обработчики событий для кнопок
+      document.querySelector('.next').addEventListener('click', nextSlide);
+      document.querySelector('.prev').addEventListener('click', prevSlide);
+
+      // Обработчики событий для точек
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+      });
+    </script>
+
+
+
+
+
+{% endblock %}
+
+</html>

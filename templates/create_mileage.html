@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Создание записи о пробеге
+{% endblock %}
+
+{% block body %}
+<div class='container mt-5'>
+    <main>
+
+        <h1 class="h3 mb-3 fw-normal custom-heading">Create a record of car's mileage</h1>
+
+        <form method="POST"  action="{{ url_for('view') }}">
+
+            <div class="col-12">
+              <label id="car" class="form-label">Car</label>
+              <div class="input-group has-validation">
+
+                  {{ form.car_id(class="form-select", id="car") }}
+
+                 <div class="invalid-feedback">
+                  Car is required.
+                 </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="mileage" class="form-label">Mileage</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" name="mileage" id="mileage" placeholder="Mileage" required="">
+                <div class="invalid-feedback">
+                  Updated car's mileage is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="date" class="form-label">Date</label>
+              <div class="input-group has-validation">
+                <input type="date" class="form-control" name="date" id="date" placeholder="Date" value="" min="1950-01-01" max="2030-12-31" required="">
+                <div class="invalid-feedback">
+                  Date of mileage's update is required.
+                </div>
+              </div>
+            </div>
+
+
+            <div class="d-grid gap-2">
+
+                <button class="btn btn-primary" type="submit">Create the record</button>
+
+            </div>
+
+
+    </div>
+    </main>
+
+</form>
+{% endblock %}

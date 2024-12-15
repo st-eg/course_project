@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Создание записи о ремонте
+{% endblock %}
+
+{% block body %}
+
+<div class='container mt-5'>
+    <main>
+
+        <h1 class="h3 mb-3 fw-normal custom-heading">Create a record of repair work</h1>
+
+    <form method="POST"  action="{{ url_for('view') }}">
+
+        <div class="col-12">
+              <label id="car" class="form-label">Car</label>
+              <div class="input-group has-validation">
+
+                  {{ form.car(class="form-select", id="car") }}
+
+                 <div class="invalid-feedback">
+                  Car's category is required.
+                 </div>
+              </div>
+        </div>
+
+        <div class="col-12">
+              <label id="worker" class="form-label">Worker</label>
+              <div class="input-group has-validation">
+
+                  {{ form.worker(class="form-select", id="worker") }}
+
+                 <div class="invalid-feedback">
+                  Worker who performed the work is required.
+                 </div>
+              </div>
+        </div>
+
+        <div class="col-12">
+              <label id="garage" class="form-label">Garage</label>
+              <div class="input-group has-validation">
+
+                  {{ form.garage(class="form-select", id="garage") }}
+
+                 <div class="invalid-feedback">
+                  Garage where was performed the work is required.
+                 </div>
+              </div>
+        </div>
+
+         <div class="col-12">
+              <label id="detail" class="form-label">Detail</label>
+              <div class="input-group has-validation">
+
+                  {{ form.detail(class="form-select", id="detail") }}
+
+                 <div class="invalid-feedback">
+                  Detail that was changed/repaired is required.
+                 </div>
+              </div>
+        </div>
+
+        <div class="col-12">
+              <label for="start_date" class="form-label">Date</label>
+              <div class="input-group has-validation">
+                <input type="date" class="form-control" name="start_date" id="start_date" placeholder="Date" value="" min="1950-01-01" max="2030-12-31" required="">
+                <div class="invalid-feedback">
+                  Date when work was performed is required.
+                </div>
+              </div>
+        </div>
+
+        <div class="col-12">
+              <label for="type" class="form-label">Type</label>
+              <div class="input-group has-validation">
+                <select name="type" id="type">
+                    <option value="Замена">Замена</option>
+                    <option value="Ремонт">Ремонт</option>
+                    <option value="Очистка">Очистка</option>
+                    <option value="Покраска">Покраска</option>
+                </select>
+                 <div class="invalid-feedback">
+                  Type of work is required.
+                 </div>
+              </div>
+    </div>
+
+        <div class="d-grid gap-2">
+
+            <button class="btn btn-primary" type="submit">Create the record</button>
+
+        </div>
+
+    </form>
+
+    </main>
+</div>
+
+
+<!--<form method="POST">-->
+<!--        {{ form.hidden_tag() }}-->
+
+<!--        <div>-->
+<!--            {{ form.car.label }} {{ form.car() }}-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            {{ form.worker.label }} {{ form.worker() }}-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            {{ form.garage.label }} {{ form.garage() }}-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            {{ form.detail.label }} {{ form.detail() }}-->
+<!--        </div>-->
+</form>
+{% endblock %}
