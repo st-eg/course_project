@@ -13,4 +13,6 @@
 
 Дата: 15.112.2024
 https://github.com/st-eg/course_project
+
+
 ![1299198](https://github.com/user-attachments/assets/bda12055-b40f-43f7-9d66-ce7020898c77)
