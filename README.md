@@ -1,4 +1,3 @@
-```
 # Система учета автопробега и плановых ремонтных работ
 
 **ВУЗ:** МТКП МГТУ им. Баумана
@@ -16,4 +15,3 @@
 https://github.com/st-eg/course_project
 
 ![1299198](https://github.com/user-attachments/assets/bda12055-b40f-43f7-9d66-ce7020898c77)
-```
